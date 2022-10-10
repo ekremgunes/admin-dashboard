@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Panel </title>
+    <!-- temel metalar -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/890b827491.js" crossorigin="anonymous"></script>
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,600;1,200;1,700;1,800&family=Open+Sans:wght@300&display=swap"
+        rel="stylesheet">
+
+    <!-- bootsrapt -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- jquery  -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <!-- links -->
+    <link rel="stylesheet" href="css/panel.css" />
+    <link rel="stylesheet" href="css/upload.css" />
+    <link rel="stylesheet" href="css/kısayol.css" />
+    <link rel="stylesheet" href="css/messages.css" />
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/PanelIndex.css">
+    <style>
+        #namespan {
+            display: none;
+        }
+
+        #name-icon {
+            color: red;
+            position: relative;
+            visibility: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- left and top bars -->
+    <header>
+        <div>
+            <div id="navbar">
+                <div id="navbar-left">
+                    <ul>
+                        <li id="page-name">Edit Content</li>
+                    </ul>
+                </div>
+                <div id="navbar-right">
+                    <ul>
+                        <li id="search-form">
+                            <form action="" method="post">
+                                <input placeholder="search" id="search-input" name="searchString" type="text">
+                                <button title="search" id="search-btn" type="submit"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </li>
+                        <li title="Look at the page">
+                            <!-- href must be real home page -->
+                            <a href="/" target="_blank"><i class="fa-solid fa-eye"></i> Look at page </i></a>
+                        </li>
+
+                        <!-- @* notification icon*@ -->
+
+                        <span title="okunmamış mesajınız var" id="messages-top-span"><i
+                                class="fas fa-circle"></i></span>
+
+
+                        <li title="messages">
+
+                            <a href="messages.html"><i class="fa-solid fa-message"></i></a>
+                        </li>
+                        <li title="account">
+                            <div class="dropdown">
+                                <button type="button" class=" dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa-solid fa-user"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-sign-out"></i> LogOut
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="mySidebar" class="sidebar">
+            <h5 style="z-index: 99;" id="panel-baslik">
+                <a target="_blank" href="https://github.com/ekremguns/ADMIN-dashboard">
+                    <i class="fa-brands fa-font-awesome"></i>
+                </a>
+                Ekrem'sTheme
+            </h5>
+
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                <i class="fa-solid fa-xmark"></i>
+            </a>
+
+            <a href="javascript:void(0)" class="openbtn" onclick="openNav()">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+
+
+            <li>
+
+                <a onmouseover="openNav()" href="index.html"><i class="fa-solid fa-house "></i></a>
+
+                <a class="text-a" href="index.html">Home Page</a>
+
+            </li>
+
+            <li>
+                <a onmouseover="openNav()" href="#"><i class="fa-solid fa-gear"></i></a>
+
+                <a class="text-a" href="#">Account</a>
+            </li>
+            <li>
+                <a onclick="collapseDiv('collapse-div-1','1')" onmouseover="openNav()" href="javascript:void(0)">
+                    <i class="fa-solid fa-building"></i>
+                </a>
+
+                <a onclick="collapseDiv('collapse-div-1','1')" class="text-a" href="javascript:void(0)">
+                    Manage Company
+                    <i style="margin-left: .8rem;display: inline;" id="down-1" class="fa-solid fa-angle-down"></i>
+                    <i style="margin-left: .8rem; display: none;" id="up-1" class="fa-solid fa-angle-up"></i>
+                </a>
+                <div id="collapse-div-1" class="collapse-div">
+                    <a href="Companies.html"><i class="fa-solid fa-building"></i>Companies</a>
+                    <a href="addCompany.html"><i class="fa-solid fa-plus"></i>Add Company</a>
+                    <a href="editCompany.html"><i class="fa-solid fa-pen-to-square"></i>Edit Company</a>
+
+                </div>
+            </li>
+            <li>
+                <a onclick="collapseDiv('collapse-div-2','2')" onmouseover="openNav()" href="javascript:void(0)">
+                    <i class="fa-solid fa-pager"></i>
+                </a>
+
+                <a onclick="collapseDiv('collapse-div-2','2')" class="text-a" href="javascript:void(0)">
+                    Manage Content
+                    <i style="margin-left: .8rem;display: inline;" id="down-2" class="fa-solid fa-angle-down"></i>
+                    <i style="margin-left: .8rem; display: none;" id="up-2" class="fa-solid fa-angle-up"></i>
+                </a>
+                <div id="collapse-div-2" class="collapse-div">
+                    <a href="Contents.html"><i class="fa-solid fa-pager"></i>Contents</a>
+                    <a href="addContent.html"><i class="fas fa-plus"></i>Add Content</a>
+                    <a href="editContent.html"><i class="fas fa-edit"></i> Edit Content</a>
+
+                </div>
+            </li>
+
+
+            <li>
+                <a onmouseover="openNav()" href="messages.html"><i class="fa-solid fa-message"></i></a>
+                <a class="text-a" href="messages.html">Messages</a>
+            </li>
+
+        </div>
+
+
+    </header>
+
+
+    <!-- main -->
+    <main role="main" id="main">
+
+        <div class="alert alert-success" role="success">
+            <h3>
+                Successfull
+            </h3>
+        </div>
+        <small>Updated content :</small>
+        <br>
+        <div>
+            <h3>x ContentName</h3>
+            <br>
+            <img src="img/illustrationIndex.jpg" alt="resim bulunamadı" width="170px">
+        </div>
+        <hr>
+        <div>
+            <a class="btn btn-success" href="Contents.html">
+                <i class="fa-solid fa-angle-left"></i> Turn the contents
+            </a>
+            <a class="btn btn-info" href="/panel/editContent?ContentId=@ViewBag.id">
+                <i class="fa-solid fa-angle-right"></i> İçeriğe git
+            </a>
+
+        </div>
+        <br>
+        <hr>
+        
+        <div class="alert alert-warning" role="alert">
+            <h3>
+                You didn't select content
+            </h3>
+        </div>
+        <hr>
+        <br>
+        <a class="btn btn-info" href="Contents.html">
+            <i class="fa-solid fa-right"></i> Go Contents
+        </a>
+
+       
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-6">
+                <form class="form" action="/panel/editContent" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="ContentId" value="@Model.ContentId">
+                    <input type="hidden" name="ImageUrl" value="@Model.ImageUrl" id="hiddenimage">
+                    <tr>
+                        <td>
+                            <label for="file" class="form-label">Content Thumbnail </label>
+                            <!-- @* <span id="imagespan" asp-validation-for="file"></span> *@ -->
+
+                        </td>
+                        <br>
+                        <td>
+                            <label id="img-label" for="singlefile">
+                                <div id="overlay">
+                                    <br><br><br><br><br><br>
+                                    <strong> click to select a picture</strong>
+                                </div>
+                            </label>
+
+                            <input id="singlefile" type='file' accept='image/*' asp-for="file" name="file"
+                                onchange='openFile(event)'>
+
+                            <div id="output-div">
+                                <div id="output-img-div">
+                                    <img id="output-img" src="img/illustrationIndex.jpg" alt="resim bulunamadı ">
+                                </div>
+                                <img id='output'>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label" for="içerikadi">Content Name</label>
+                            <i id="name-icon" class="fa-solid fa-triangle-exclamation" title=""></i>
+                        </td>
+                        <br>
+                        <td>
+                            <span id="namespan" asp-validation-for="ContentName"></span>
+                            <input placeholder="Content Name" class="form-input" id="içerikadi" name="ContentName"
+                                value="@Model.ContentName" type="text">
+                            <br>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <h6 style="color: var(--first);">İçerik Resimleri</h6>
+                        <hr>
+                        <div style="width: 13rem;" class="alert  alert-warning">
+                            no img 
+                        </div>
+                        <hr>
+                        <table style="width:20rem;" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width: 9rem;">img</th>
+                                    <th scope="col">shorcut</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <form action="">
+                                        <input style="display: none;" type="submit" value="test button">
+                                    </form>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <img width="130px" style="margin:5px;" src="img/illustrationIndex.jpg"
+                                            alt="resim bulunamadı">
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <form asp-controller="Panel" asp-action="deleteImage" method="post">
+                                                    <input type="hidden" name="ContentId" value="@Model.ContentId">
+                                                    <input type="hidden" name="ImageId" value="@Model.ImageId">
+                                                    <button class="kısayol-btn kısayol-delete" type="submit">
+                                                        <i class="fa-solid fa-trash-can"></i> delete
+                                                    </button>
+
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+                        
+                    </tr>
+                    <tr>
+                        <label class="btn btn-info" for="file">
+                            <i class="fa-solid fa-folder-open"></i>
+                            add to pictures
+                        </label>
+
+                        <input asp-for="Images" name="Images" type="file" id="file" class="upload" accept="image/*"
+                            multiple />
+
+                        <div id="UrunResimDIV" class="row "></div>
+                    </tr>
+
+                    <tr>
+                        <label for="select" class="form-label">Select Company</label>
+                        <select name="CompanyId" id="select" class="form-select">
+
+                            <option selected value="@Model.CompanyId">x CompanyName</option>
+
+
+                            <!-- <option selected disabled>Şirket</option> -->
+
+
+
+                            <option value="@c.CompanyId">CompanyName</option>
+                            <option value="@c.CompanyId">CompanyName</option>
+
+
+
+                        </select>
+                    </tr>
+
+
+                    <button type="submit" class="btn btn-info btn-submit"><i class="fas fa-save"></i> Kaydet</button>
+                    <a class="btn btn-secondary" href="Contents.html">
+                        go Contents <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </form>
+
+
+
+            </div>
+
+
+    </main>
+
+
+    <!--scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/uploadsingle.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/collapse.js"></script>
+
+</body>
+
+</html>

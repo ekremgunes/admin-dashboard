@@ -1,0 +1,18 @@
+#messages-top-span {
+    position: absolute;
+    right: 5.2rem ;
+    top: .1rem;   
+    z-index: 15;
+    
+}
+#messages-top-span i{
+    font-size: small;
+    font-weight: bold;
+    color: rgb(67, 233, 67);
+}
+
+@media (max-width:562px) {
+    #messages-top-span{
+        display: none;
+    }
+}

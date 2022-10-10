@@ -1,0 +1,28 @@
+.kısayol-btn{
+    border: 2px solid white;
+    border-radius: .5rem;
+    background-color: white;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    margin-left: .5rem;
+}
+.kısayol-delete{
+    color: red;
+}
+.kısayol-delete:hover{
+    border-color: red;
+}
+.kısayol-edit{
+    color: rgb(26, 210, 191);
+}
+.kısayol-edit:hover{
+    border-color: rgb(23, 184, 168);
+}
+.kısayol{
+    padding: 0rem;
+    margin: 0rem;
+    display: inline-flex;
+}
+.kısayol form{
+    display: inline;
+}

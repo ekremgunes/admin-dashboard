@@ -1,0 +1,121 @@
+
+input[type="file"] {
+    position: absolute;
+    left: -9999rem
+}
+#overlay {
+    opacity: 0;
+    background: gray;
+    position: absolute;
+    width: 16.8rem;
+    height: 12.8rem;
+    border-radius: 1rem;
+}
+
+#overlay strong {
+    margin-left: 3rem;
+    color: white;
+}
+
+#img-label {
+    border: 2px solid var(--first);
+    display: inline-block;
+    position: absolute;
+    width: 17rem;
+    height: 13rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#img-label:hover #overlay {
+    opacity: 0.8;
+}
+
+#output {
+    display: none;
+    z-index: 5;
+    width: 16.9rem;
+    height: 12.8rem;
+    border-radius: 1rem;
+}
+
+/* #output-img-div {} */
+
+#output-img {
+    background-position: center;
+    width: 17rem !important;
+    height: 13rem !important;
+    border-radius: 1rem;
+}
+
+#output-div {
+    margin-bottom: 1rem;
+}
+
+
+.info-form{
+    display: inline-block;
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.form-label{
+    color: var(--first);
+    margin: 1rem;
+    padding: .5;
+    font-weight: 500;
+    margin-left: 0;
+
+}
+.form-input{
+    border-radius: .7rem;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    border: 1px solid var(--first);
+    outline: none;
+}
+.form-input:focus{
+    border: .15rem solid var(--first);
+}
+.btn-submit{
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: .5rem;
+}
+
+.message{
+    animation: messageanimasyon 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes messageanimasyon{
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+#select{
+    border-color: var(--first);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    width: 10rem;
+}

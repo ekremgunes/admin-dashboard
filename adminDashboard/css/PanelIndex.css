@@ -1,0 +1,23 @@
+#unit{
+    margin: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.units{
+    border-radius: .8rem;
+    padding: .6rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    color: var(--white);
+    background-color: var(--first);
+    margin-left: 1.1rem;
+    margin-right: 1.1rem;
+    display: inline-flex;
+    font-weight: 500;
+}
+.units i{
+    padding-top: .3rem;
+    margin-right: .7rem
+}

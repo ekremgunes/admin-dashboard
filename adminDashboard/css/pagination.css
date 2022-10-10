@@ -1,0 +1,64 @@
+.paginate_button {
+    background-color: rgba(2, 0, 131, 0.763);
+    margin-left: .5rem;
+    padding: .5rem;
+    padding-left: .9rem;
+    padding-right: .9rem;
+    border-radius: .7rem;
+}
+
+.paginate_button a {
+    font-weight: 500;
+    color: white;
+}
+
+.pagination {
+    padding: .5rem;
+    margin: .5rem;
+    text-align: right;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.current {
+    background-color: rgb(1, 0, 30);
+}
+
+.dataTables_info {
+    margin-top: 1rem;
+    font-size: small;
+    font-weight: bold;
+    position: absolute;
+}
+
+.dataTables_filter {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.dataTables_filter label{
+    font-weight: 500;
+}
+.dataTables_filter input{
+    color: black;
+    margin-left: .5rem;
+    border-radius: .5rem;
+}
+.dataTables_filter input:focus{
+    outline: 3px solid darkblue;
+}
+
+.dataTables_length {
+    position: absolute;
+}
+.dataTables_length label{
+    font-weight: 550;
+}
+.dataTables_length select{
+    padding: .3rem;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+    border-radius: .5rem;
+
+}
