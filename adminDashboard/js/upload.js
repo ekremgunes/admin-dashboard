@@ -1,52 +1,52 @@
 $('#file').on('change', function () {
 
 
-    var countFiles = $(this)[0].files.length;
-    var imgPath = $(this)[0].value;
-    var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+    var countFiles = $(this)[0].files.length
+    var imgPath = $(this)[0].value
+    var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase()
 
     if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg" || extn == "svg") {
 
         for (var i = 0; i < countFiles; i++) {
-            $type = this.files[i].type;
+            $type = this.files[i].type
 
-            var reader = new FileReader();
+            var reader = new FileReader()
             reader.onload = function (e) {
                 console.log("girdi")
                 $sayi = $('.PictureItem').length + 1;
 
-                DivID = Password.generate(16);
+                DivID = Password.generate(16)
 
-                $html = '<div style="width:140px;" id="Resim' + DivID + '" class="PictureItem ">';
-                $html += '<div style="width:140px;" class="item">';
-                $html += '<div class="sayi badge badge-dark">' + $sayi + '</div>';
-                $html += '<a class="btn btn-danger btn-sm text-white UrunResimSil" id="Delete' + DivID + '" data-id="' + DivID + '">X</a>';
-                $html += '<div class="ImageBG" data-id="' + DivID + '" data-sort="' + $sayi + '" data-type="' + $type + '" data-val="' + e.target.result + '" style="background-image: url(' + e.target.result + ');"></div>';
-                $html += '</div>';
-                $html += '</div>';
+                $html = '<div style="width:140px;" id="Resim' + DivID + '" class="PictureItem ">'
+                $html += '<div style="width:140px;" class="item">'
+                $html += '<div class="sayi badge badge-dark">' + $sayi + '</div>'
+                $html += '<a class="btn btn-danger btn-sm text-white UrunResimSil" id="Delete' + DivID + '" data-id="' + DivID + '">X</a>'
+                $html += '<div class="ImageBG" data-id="' + DivID + '" data-sort="' + $sayi + '" data-type="' + $type + '" data-val="' + e.target.result + '" style="background-image: url(' + e.target.result + ');"></div>'
+                $html += '</div>'
+                $html += '</div>'
 
-                $('#UrunResimDIV').append($html);
+                $('#UrunResimDIV').append($html)
 
                 $('.UrunResimSil').click(function () {
-                    DivID = $(this).attr("data-id");
-                    $('#Resim' + DivID).remove();
+                    DivID = $(this).attr("data-id")
+                    $('#Resim' + DivID).remove()
                 });
 
 
                 $('.ImageRemove').click(function () {
-                    $id = $(this).attr("data-id");
-                    $('#' + $id).remove();
+                    $id = $(this).attr("data-id")
+                    $('#' + $id).remove()
                 })
             }
-            reader.readAsDataURL(this.files[i]);
+            reader.readAsDataURL(this.files[i])
 
         }
 
     } else {
-        Alertify("Desteklenmeyen dosya türü", "danger");
+        Alertify("Desteklenmeyen dosya türü", "danger")
     }
     setTimeout(function () {
-        $("body").loading('stop');
+        $("body").loading('stop')
     }, 1500);
 });
 
@@ -59,32 +59,32 @@ var Password = {
     _getRandomByte: function () {
         // http://caniuse.com/#feat=getrandomvalues
         if (window.crypto && window.crypto.getRandomValues) {
-            var result = new Uint8Array(1);
-            window.crypto.getRandomValues(result);
-            return result[0];
+            var result = new Uint8Array(1)
+            window.crypto.getRandomValues(result)
+            return result[0]
         }
         else if (window.msCrypto && window.msCrypto.getRandomValues) {
-            var result = new Uint8Array(1);
-            window.msCrypto.getRandomValues(result);
-            return result[0];
+            var result = new Uint8Array(1)
+            window.msCrypto.getRandomValues(result)
+            return result[0]
         }
         else {
-            return Math.floor(Math.random() * 256);
+            return Math.floor(Math.random() * 256)
         }
     },
 
     generate: function (length) {
         return Array.apply(null, { 'length': length })
             .map(function () {
-                var result;
+                var result
                 while (true) {
-                    result = String.fromCharCode(this._getRandomByte());
+                    result = String.fromCharCode(this._getRandomByte())
                     if (this._pattern.test(result)) {
-                        return result;
+                        return result
                     }
                 }
             }, this)
-            .join('');
+            .join('')
     }
 
 };
