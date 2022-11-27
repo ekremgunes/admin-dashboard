@@ -1,2 +1,2 @@
 # admin-dashboard
-similar and base admin dashboard
+basic admin dashboard
